@@ -1,0 +1,1108 @@
+	.text
+	.hsa_code_object_version 2,1
+	.hsa_code_object_isa 9,0,8,"AMD","AMDGPU"
+	.weak	_Z11matrix_fp16PfS_i    ; -- Begin function _Z11matrix_fp16PfS_i
+	.p2align	8
+	.type	_Z11matrix_fp16PfS_i,@function
+	.amdgpu_hsa_kernel _Z11matrix_fp16PfS_i
+_Z11matrix_fp16PfS_i:                   ; @_Z11matrix_fp16PfS_i
+	.amd_kernel_code_t
+		amd_code_version_major = 1
+		amd_code_version_minor = 2
+		amd_machine_kind = 1
+		amd_machine_version_major = 9
+		amd_machine_version_minor = 0
+		amd_machine_version_stepping = 8
+		kernel_code_entry_byte_offset = 256
+		kernel_code_prefetch_byte_size = 0
+		granulated_workitem_vgpr_count = 7
+		granulated_wavefront_sgpr_count = 4
+		priority = 0
+		float_mode = 192
+		priv = 0
+		enable_dx10_clamp = 1
+		debug_mode = 0
+		enable_ieee_mode = 1
+		enable_wgp_mode = 0
+		enable_mem_ordered = 0
+		enable_fwd_progress = 0
+		enable_sgpr_private_segment_wave_byte_offset = 0
+		user_sgpr_count = 8
+		enable_trap_handler = 0
+		enable_sgpr_workgroup_id_x = 1
+		enable_sgpr_workgroup_id_y = 1
+		enable_sgpr_workgroup_id_z = 0
+		enable_sgpr_workgroup_info = 0
+		enable_vgpr_workitem_id = 1
+		enable_exception_msb = 0
+		granulated_lds_size = 0
+		enable_exception = 0
+		enable_sgpr_private_segment_buffer = 1
+		enable_sgpr_dispatch_ptr = 1
+		enable_sgpr_queue_ptr = 0
+		enable_sgpr_kernarg_segment_ptr = 1
+		enable_sgpr_dispatch_id = 0
+		enable_sgpr_flat_scratch_init = 0
+		enable_sgpr_private_segment_size = 0
+		enable_sgpr_grid_workgroup_count_x = 0
+		enable_sgpr_grid_workgroup_count_y = 0
+		enable_sgpr_grid_workgroup_count_z = 0
+		enable_wavefront_size32 = 0
+		enable_ordered_append_gds = 0
+		private_element_size = 1
+		is_ptr64 = 1
+		is_dynamic_callstack = 0
+		is_debug_enabled = 0
+		is_xnack_enabled = 1
+		workitem_private_segment_byte_size = 0
+		workgroup_group_segment_byte_size = 0
+		gds_segment_byte_size = 0
+		kernarg_segment_byte_size = 20
+		workgroup_fbarrier_count = 0
+		wavefront_sgpr_count = 37
+		workitem_vgpr_count = 32
+		reserved_vgpr_first = 0
+		reserved_vgpr_count = 0
+		reserved_sgpr_first = 0
+		reserved_sgpr_count = 0
+		debug_wavefront_private_segment_offset_sgpr = 0
+		debug_private_segment_buffer_sgpr = 0
+		kernarg_segment_alignment = 4
+		group_segment_alignment = 4
+		private_segment_alignment = 4
+		wavefront_size = 6
+		call_convention = -1
+		runtime_loader_kernel_symbol = 0
+	.end_amd_kernel_code_t
+; %bb.0:                                ; %entry
+	s_mov_b32 s16, s10
+	s_mov_b32 s32, s16
+	s_load_dwordx4 s[12:15], s[6:7], 0x0
+	s_load_dword s10, s[6:7], 0x10
+	s_waitcnt lgkmcnt(0)
+	s_mov_b32 s11, s13
+                                        ; kill: def $sgpr12 killed $sgpr12 killed $sgpr12_sgpr13_sgpr14_sgpr15
+	s_mov_b32 s6, s12
+	s_mov_b32 s7, s11
+	s_load_dword s11, s[4:5], 0x4
+	s_load_dword s12, s[4:5], 0xc
+	s_load_dword s13, s[4:5], 0x10
+	s_mov_b32 s14, 0xffff
+	s_waitcnt lgkmcnt(0)
+	s_and_b32 s11, s11, s14
+	s_mul_i32 s14, s8, s11
+	s_sub_i32 s12, s12, s14
+	s_min_u32 s11, s12, s11
+	s_mul_i32 s8, s8, s11
+	v_add_u32_e32 v0, s8, v0
+	v_mov_b32_e32 v2, s4
+	v_mov_b32_e32 v3, s5
+	s_nop 0
+	global_load_ushort v4, v[2:3], off offset:6
+                                        ; implicit-def: $sgpr8
+	s_waitcnt vmcnt(0)
+	v_mul_lo_u32 v5, s9, v4
+	v_sub_u32_e32 v5, s13, v5
+                                        ; implicit-def: $sgpr8
+	v_min_u32_e32 v4, v5, v4
+	v_mul_lo_u32 v4, s9, v4
+	s_mov_b32 s8, 0
+	v_mov_b32_e32 v5, s8
+	s_nop 0
+	s_nop 0
+	v_accvgpr_write_b32 a0, v5
+	v_mov_b32_e32 v5, s8
+	s_nop 0
+	s_nop 0
+	v_accvgpr_write_b32 a1, v5
+	v_mov_b32_e32 v5, s8
+	s_nop 0
+	s_nop 0
+	v_accvgpr_write_b32 a2, v5
+	v_mov_b32_e32 v5, s8
+	s_nop 0
+	s_nop 0
+	v_accvgpr_write_b32 a3, v5
+	v_mov_b32_e32 v5, s8
+	s_nop 0
+	s_nop 0
+	v_accvgpr_write_b32 a4, v5
+	v_mov_b32_e32 v5, s8
+	s_nop 0
+	s_nop 0
+	v_accvgpr_write_b32 a5, v5
+	v_mov_b32_e32 v5, s8
+	s_nop 0
+	s_nop 0
+	v_accvgpr_write_b32 a6, v5
+	v_mov_b32_e32 v5, s8
+	s_nop 0
+	s_nop 0
+	v_accvgpr_write_b32 a7, v5
+	v_mov_b32_e32 v5, s8
+	s_nop 0
+	s_nop 0
+	v_accvgpr_write_b32 a8, v5
+	v_mov_b32_e32 v5, s8
+	s_nop 0
+	s_nop 0
+	v_accvgpr_write_b32 a9, v5
+	v_mov_b32_e32 v5, s8
+	s_nop 0
+	s_nop 0
+	v_accvgpr_write_b32 a10, v5
+	v_mov_b32_e32 v5, s8
+	s_nop 0
+	s_nop 0
+	v_accvgpr_write_b32 a11, v5
+	v_mov_b32_e32 v5, s8
+	s_nop 0
+	s_nop 0
+	v_accvgpr_write_b32 a12, v5
+	v_mov_b32_e32 v5, s8
+	s_nop 0
+	s_nop 0
+	v_accvgpr_write_b32 a13, v5
+	v_mov_b32_e32 v5, s8
+	s_nop 0
+	s_nop 0
+	v_accvgpr_write_b32 a14, v5
+	v_mov_b32_e32 v5, s8
+	s_nop 0
+	s_nop 0
+	v_accvgpr_write_b32 a15, v5
+	v_accvgpr_read_b32 v10, a0
+	s_nop 0
+	s_nop 0
+	v_accvgpr_write_b32 a16, v10
+	v_accvgpr_read_b32 v8, a1
+	s_nop 0
+	s_nop 0
+	v_accvgpr_write_b32 a17, v8
+	v_accvgpr_read_b32 v9, a2
+	s_nop 0
+	s_nop 0
+	v_accvgpr_write_b32 a18, v9
+	v_accvgpr_read_b32 v10, a3
+	s_nop 0
+	s_nop 0
+	v_accvgpr_write_b32 a19, v10
+	v_accvgpr_read_b32 v8, a4
+	s_nop 0
+	s_nop 0
+	v_accvgpr_write_b32 a20, v8
+	v_accvgpr_read_b32 v9, a5
+	s_nop 0
+	s_nop 0
+	v_accvgpr_write_b32 a21, v9
+	v_accvgpr_read_b32 v10, a6
+	s_nop 0
+	s_nop 0
+	v_accvgpr_write_b32 a22, v10
+	v_accvgpr_read_b32 v8, a7
+	s_nop 0
+	s_nop 0
+	v_accvgpr_write_b32 a23, v8
+	v_accvgpr_read_b32 v9, a8
+	s_nop 0
+	s_nop 0
+	v_accvgpr_write_b32 a24, v9
+	v_accvgpr_read_b32 v10, a9
+	s_nop 0
+	s_nop 0
+	v_accvgpr_write_b32 a25, v10
+	v_accvgpr_read_b32 v8, a10
+	s_nop 0
+	s_nop 0
+	v_accvgpr_write_b32 a26, v8
+	v_accvgpr_read_b32 v9, a11
+	s_nop 0
+	s_nop 0
+	v_accvgpr_write_b32 a27, v9
+	v_accvgpr_read_b32 v10, a12
+	s_nop 0
+	s_nop 0
+	v_accvgpr_write_b32 a28, v10
+	v_accvgpr_read_b32 v8, a13
+	s_nop 0
+	s_nop 0
+	v_accvgpr_write_b32 a29, v8
+	v_accvgpr_read_b32 v9, a14
+	s_nop 0
+	s_nop 0
+	v_accvgpr_write_b32 a30, v9
+	v_accvgpr_write_b32 a31, v5
+	s_mov_b32 s8, 0
+	s_mov_b32 s4, s8
+	s_mov_b32 s5, s8
+	v_mov_b32_e32 v2, s4
+	v_mov_b32_e32 v3, s5
+	v_mov_b32_e32 v7, s5
+	v_mov_b32_e32 v6, s4
+	s_nop 0
+	s_nop 0
+	v_mfma_f32_32x32x8f16 a[16:31], v[2:3], v[6:7], a[16:31]
+	s_nop 0
+	s_nop 0
+	s_nop 0
+	s_nop 0
+	s_nop 0
+	s_nop 0
+	s_nop 0
+	s_nop 0
+	s_nop 0
+	s_nop 0
+	s_nop 0
+	s_nop 0
+	s_nop 0
+	s_nop 0
+	s_nop 0
+	s_nop 0
+	s_nop 0
+	s_nop 0
+	v_accvgpr_read_b32 v5, a16
+                                        ; implicit-def: $sgpr8
+	v_mul_lo_u32 v0, v0, s10
+	v_add3_u32 v0, v1, v0, v4
+                                        ; implicit-def: $sgpr8
+	v_ashrrev_i32_e32 v1, 31, v0
+                                        ; implicit-def: $sgpr8
+	v_mov_b32_e32 v2, v0
+	v_mov_b32_e32 v3, v1
+	s_mov_b32 s8, 2
+	v_lshlrev_b64 v[2:3], s8, v[2:3]
+	s_mov_b32 s8, s6
+	v_mov_b32_e32 v0, v2
+                                        ; kill: def $sgpr7 killed $sgpr7 killed $sgpr6_sgpr7
+                                        ; kill: def $vgpr3 killed $vgpr3 killed $vgpr2_vgpr3 killed $exec
+	v_add_co_u32_e64 v0, s[4:5], s8, v0
+	v_mov_b32_e32 v1, s7
+	v_addc_co_u32_e64 v1, s[4:5], v1, v3, s[4:5]
+	v_mov_b32_e32 v6, v0
+	v_mov_b32_e32 v7, v1
+	s_nop 0
+	global_store_dword v[6:7], v5, off
+	s_endpgm
+.Lfunc_end0:
+	.size	_Z11matrix_fp16PfS_i, .Lfunc_end0-_Z11matrix_fp16PfS_i
+                                        ; -- End function
+	.section	.AMDGPU.csdata
+; Kernel info:
+; codeLenInByte = 1056
+; NumSgprs: 37
+; NumVgprs: 32
+; ScratchSize: 0
+; MemoryBound: 0
+; FloatMode: 192
+; IeeeMode: 1
+; LDSByteSize: 0 bytes/workgroup (compile time only)
+; SGPRBlocks: 4
+; VGPRBlocks: 7
+; NumSGPRsForWavesPerEU: 37
+; NumVGPRsForWavesPerEU: 32
+; Occupancy: 8
+; WaveLimiterHint : 1
+; COMPUTE_PGM_RSRC2:USER_SGPR: 8
+; COMPUTE_PGM_RSRC2:TRAP_HANDLER: 0
+; COMPUTE_PGM_RSRC2:TGID_X_EN: 1
+; COMPUTE_PGM_RSRC2:TGID_Y_EN: 1
+; COMPUTE_PGM_RSRC2:TGID_Z_EN: 0
+; COMPUTE_PGM_RSRC2:TIDIG_COMP_CNT: 1
+	.text
+	.weak	_Z11matrix_fp32PfS_i    ; -- Begin function _Z11matrix_fp32PfS_i
+	.p2align	8
+	.type	_Z11matrix_fp32PfS_i,@function
+	.amdgpu_hsa_kernel _Z11matrix_fp32PfS_i
+_Z11matrix_fp32PfS_i:                   ; @_Z11matrix_fp32PfS_i
+	.amd_kernel_code_t
+		amd_code_version_major = 1
+		amd_code_version_minor = 2
+		amd_machine_kind = 1
+		amd_machine_version_major = 9
+		amd_machine_version_minor = 0
+		amd_machine_version_stepping = 8
+		kernel_code_entry_byte_offset = 256
+		kernel_code_prefetch_byte_size = 0
+		granulated_workitem_vgpr_count = 3
+		granulated_wavefront_sgpr_count = 4
+		priority = 0
+		float_mode = 192
+		priv = 0
+		enable_dx10_clamp = 1
+		debug_mode = 0
+		enable_ieee_mode = 1
+		enable_wgp_mode = 0
+		enable_mem_ordered = 0
+		enable_fwd_progress = 0
+		enable_sgpr_private_segment_wave_byte_offset = 0
+		user_sgpr_count = 8
+		enable_trap_handler = 0
+		enable_sgpr_workgroup_id_x = 1
+		enable_sgpr_workgroup_id_y = 1
+		enable_sgpr_workgroup_id_z = 0
+		enable_sgpr_workgroup_info = 0
+		enable_vgpr_workitem_id = 1
+		enable_exception_msb = 0
+		granulated_lds_size = 0
+		enable_exception = 0
+		enable_sgpr_private_segment_buffer = 1
+		enable_sgpr_dispatch_ptr = 1
+		enable_sgpr_queue_ptr = 0
+		enable_sgpr_kernarg_segment_ptr = 1
+		enable_sgpr_dispatch_id = 0
+		enable_sgpr_flat_scratch_init = 0
+		enable_sgpr_private_segment_size = 0
+		enable_sgpr_grid_workgroup_count_x = 0
+		enable_sgpr_grid_workgroup_count_y = 0
+		enable_sgpr_grid_workgroup_count_z = 0
+		enable_wavefront_size32 = 0
+		enable_ordered_append_gds = 0
+		private_element_size = 1
+		is_ptr64 = 1
+		is_dynamic_callstack = 0
+		is_debug_enabled = 0
+		is_xnack_enabled = 1
+		workitem_private_segment_byte_size = 0
+		workgroup_group_segment_byte_size = 0
+		gds_segment_byte_size = 0
+		kernarg_segment_byte_size = 20
+		workgroup_fbarrier_count = 0
+		wavefront_sgpr_count = 37
+		workitem_vgpr_count = 13
+		reserved_vgpr_first = 0
+		reserved_vgpr_count = 0
+		reserved_sgpr_first = 0
+		reserved_sgpr_count = 0
+		debug_wavefront_private_segment_offset_sgpr = 0
+		debug_private_segment_buffer_sgpr = 0
+		kernarg_segment_alignment = 4
+		group_segment_alignment = 4
+		private_segment_alignment = 4
+		wavefront_size = 6
+		call_convention = -1
+		runtime_loader_kernel_symbol = 0
+	.end_amd_kernel_code_t
+; %bb.0:                                ; %entry
+	s_mov_b32 s16, s10
+	s_mov_b32 s32, s16
+	s_load_dwordx4 s[12:15], s[6:7], 0x0
+	s_load_dword s10, s[6:7], 0x10
+	s_waitcnt lgkmcnt(0)
+	s_mov_b32 s11, s13
+                                        ; kill: def $sgpr12 killed $sgpr12 killed $sgpr12_sgpr13_sgpr14_sgpr15
+	s_mov_b32 s6, s12
+	s_mov_b32 s7, s11
+	s_load_dword s11, s[4:5], 0x4
+	s_load_dword s12, s[4:5], 0xc
+	s_load_dword s13, s[4:5], 0x10
+	s_mov_b32 s14, 0xffff
+	s_waitcnt lgkmcnt(0)
+	s_and_b32 s11, s11, s14
+	s_mul_i32 s14, s8, s11
+	s_sub_i32 s12, s12, s14
+	s_min_u32 s11, s12, s11
+	s_mul_i32 s8, s8, s11
+	v_add_u32_e32 v0, s8, v0
+	v_mov_b32_e32 v2, s4
+	v_mov_b32_e32 v3, s5
+	s_nop 0
+	global_load_ushort v4, v[2:3], off offset:6
+                                        ; implicit-def: $sgpr8
+	s_waitcnt vmcnt(0)
+	v_mul_lo_u32 v5, s9, v4
+	v_sub_u32_e32 v5, s13, v5
+                                        ; implicit-def: $sgpr8
+	v_min_u32_e32 v4, v5, v4
+	v_mul_lo_u32 v4, s9, v4
+                                        ; implicit-def: $vgpr5
+                                        ; implicit-def: $vgpr6
+                                        ; implicit-def: $vgpr7_vgpr8_vgpr9_vgpr10
+	v_accvgpr_write_b32 a0, v7
+	v_accvgpr_write_b32 a1, v8
+	v_accvgpr_write_b32 a2, v9
+	v_accvgpr_write_b32 a3, v10
+	s_nop 0
+	v_mfma_f32_16x16x4f32 a[0:3], v5, v6, a[0:3]
+	s_nop 0
+	s_nop 0
+	s_nop 0
+	s_nop 0
+	s_nop 0
+	s_nop 0
+	s_nop 0
+	s_nop 0
+	s_nop 0
+	s_nop 0
+	v_accvgpr_read_b32 v5, a0
+                                        ; implicit-def: $sgpr8
+	v_mul_lo_u32 v0, v0, s10
+	v_add3_u32 v0, v1, v0, v4
+                                        ; implicit-def: $sgpr8
+	v_ashrrev_i32_e32 v1, 31, v0
+                                        ; implicit-def: $sgpr8
+	v_mov_b32_e32 v2, v0
+	v_mov_b32_e32 v3, v1
+	s_mov_b32 s8, 2
+	v_lshlrev_b64 v[2:3], s8, v[2:3]
+	s_mov_b32 s8, s6
+	v_mov_b32_e32 v0, v2
+                                        ; kill: def $sgpr7 killed $sgpr7 killed $sgpr6_sgpr7
+                                        ; kill: def $vgpr3 killed $vgpr3 killed $vgpr2_vgpr3 killed $exec
+	v_add_co_u32_e64 v0, s[4:5], s8, v0
+	v_mov_b32_e32 v1, s7
+	v_addc_co_u32_e64 v1, s[4:5], v1, v3, s[4:5]
+	v_mov_b32_e32 v11, v0
+	v_mov_b32_e32 v12, v1
+	s_nop 0
+	global_store_dword v[11:12], v5, off
+	s_endpgm
+.Lfunc_end1:
+	.size	_Z11matrix_fp32PfS_i, .Lfunc_end1-_Z11matrix_fp32PfS_i
+                                        ; -- End function
+	.section	.AMDGPU.csdata
+; Kernel info:
+; codeLenInByte = 332
+; NumSgprs: 37
+; NumVgprs: 13
+; ScratchSize: 0
+; MemoryBound: 0
+; FloatMode: 192
+; IeeeMode: 1
+; LDSByteSize: 0 bytes/workgroup (compile time only)
+; SGPRBlocks: 4
+; VGPRBlocks: 3
+; NumSGPRsForWavesPerEU: 37
+; NumVGPRsForWavesPerEU: 13
+; Occupancy: 10
+; WaveLimiterHint : 1
+; COMPUTE_PGM_RSRC2:USER_SGPR: 8
+; COMPUTE_PGM_RSRC2:TRAP_HANDLER: 0
+; COMPUTE_PGM_RSRC2:TGID_X_EN: 1
+; COMPUTE_PGM_RSRC2:TGID_Y_EN: 1
+; COMPUTE_PGM_RSRC2:TGID_Z_EN: 0
+; COMPUTE_PGM_RSRC2:TIDIG_COMP_CNT: 1
+	.protected	__ocmlpriv_lnep_f32
+	.protected	__ocml_erfcinv_f64
+	.protected	__ocml_erfinv_f64
+	.protected	__ocml_nan_f16
+	.protected	__ocml_ldexp_f16
+	.protected	__ocml_tgamma_f32
+	.protected	__ocmlpriv_epln_f32
+	.protected	__ocml_lgamma_r_f64
+	.protected	__ocml_pow_f32
+	.protected	__ocml_powr_f64
+
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.ident	"HCC clang version 10.0.0 (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/clang 61f97b4ab7a5a36553c6fad7bf72601666127554) (/data/jenkins_workspace/compute-rocm-rel-2.8/external/hcc-tot/compiler b7f876231af7fdaf52e419088b8ba9e0c3a61845) (based on HCC 2.8.19343-e4249af-61f97b4-b7f8762 )"
+	.section	".note.GNU-stack"
+	.amd_amdgpu_isa "amdgcn-amd-amdhsa--gfx908+sram-ecc"
+	.amd_amdgpu_hsa_metadata
+---
+Version:         [ 1, 0 ]
+Kernels:
+  - Name:            _Z11matrix_fp16PfS_i
+    SymbolName:      '_Z11matrix_fp16PfS_i@kd'
+    Language:        OpenCL C
+    LanguageVersion: [ 2, 0 ]
+    Args:
+      - Name:            out
+        Size:            8
+        Align:           8
+        ValueKind:       GlobalBuffer
+        ValueType:       F32
+        AddrSpaceQual:   Generic
+      - Name:            in
+        Size:            8
+        Align:           8
+        ValueKind:       GlobalBuffer
+        ValueType:       F32
+        AddrSpaceQual:   Generic
+      - Name:            width
+        Size:            4
+        Align:           4
+        ValueKind:       ByValue
+        ValueType:       I32
+    CodeProps:
+      KernargSegmentSize: 20
+      GroupSegmentFixedSize: 0
+      PrivateSegmentFixedSize: 0
+      KernargSegmentAlign: 8
+      WavefrontSize:   64
+      NumSGPRs:        37
+      NumVGPRs:        32
+      MaxFlatWorkGroupSize: 256
+      IsXNACKEnabled:  true
+  - Name:            _Z11matrix_fp32PfS_i
+    SymbolName:      '_Z11matrix_fp32PfS_i@kd'
+    Language:        OpenCL C
+    LanguageVersion: [ 2, 0 ]
+    Args:
+      - Name:            out
+        Size:            8
+        Align:           8
+        ValueKind:       GlobalBuffer
+        ValueType:       F32
+        AddrSpaceQual:   Generic
+      - Name:            in
+        Size:            8
+        Align:           8
+        ValueKind:       GlobalBuffer
+        ValueType:       F32
+        AddrSpaceQual:   Generic
+      - Name:            width
+        Size:            4
+        Align:           4
+        ValueKind:       ByValue
+        ValueType:       I32
+    CodeProps:
+      KernargSegmentSize: 20
+      GroupSegmentFixedSize: 0
+      PrivateSegmentFixedSize: 0
+      KernargSegmentAlign: 8
+      WavefrontSize:   64
+      NumSGPRs:        37
+      NumVGPRs:        13
+      MaxFlatWorkGroupSize: 256
+      IsXNACKEnabled:  true
+...
+
+	.end_amd_amdgpu_hsa_metadata
