@@ -79,76 +79,7 @@ extern "C" __device__ mfma_float16 __llvm_amdgcn_mfma_f32_32x32x2f32(float, floa
 #define MAGIC_DIV(dividend, magicNumber, magicShift) ((uint64_t)(dividend) * magicNumber >> magicShift)
 
 /* MAC's */
-#define MAC(A,B,DST) DST += A*B
-#define TYPE_MAC(MULA,MULB,DST) DST = MAC(MULA,MULB,DST);
 #define TYPE_MAC_WRITE(DST,SRC,ALPHA,REG,BETA) DST = 0 != (BETA) ? (ALPHA)*(REG) + (BETA)*(SRC) : (ALPHA)*(REG);
-
-/* 8x8 micro-tile */
-#define MAC_8x8\
-  TYPE_MAC(rA[0],rB[0],rC[0+0*TT0I]); \
-  TYPE_MAC(rA[1],rB[0],rC[1+0*TT0I]); \
-  TYPE_MAC(rA[2],rB[0],rC[2+0*TT0I]); \
-  TYPE_MAC(rA[3],rB[0],rC[3+0*TT0I]); \
-  TYPE_MAC(rA[4],rB[0],rC[4+0*TT0I]); \
-  TYPE_MAC(rA[5],rB[0],rC[5+0*TT0I]); \
-  TYPE_MAC(rA[6],rB[0],rC[6+0*TT0I]); \
-  TYPE_MAC(rA[7],rB[0],rC[7+0*TT0I]); \
-  TYPE_MAC(rA[0],rB[1],rC[0+1*TT0I]); \
-  TYPE_MAC(rA[1],rB[1],rC[1+1*TT0I]); \
-  TYPE_MAC(rA[2],rB[1],rC[2+1*TT0I]); \
-  TYPE_MAC(rA[3],rB[1],rC[3+1*TT0I]); \
-  TYPE_MAC(rA[4],rB[1],rC[4+1*TT0I]); \
-  TYPE_MAC(rA[5],rB[1],rC[5+1*TT0I]); \
-  TYPE_MAC(rA[6],rB[1],rC[6+1*TT0I]); \
-  TYPE_MAC(rA[7],rB[1],rC[7+1*TT0I]); \
-  TYPE_MAC(rA[0],rB[2],rC[0+2*TT0I]); \
-  TYPE_MAC(rA[1],rB[2],rC[1+2*TT0I]); \
-  TYPE_MAC(rA[2],rB[2],rC[2+2*TT0I]); \
-  TYPE_MAC(rA[3],rB[2],rC[3+2*TT0I]); \
-  TYPE_MAC(rA[4],rB[2],rC[4+2*TT0I]); \
-  TYPE_MAC(rA[5],rB[2],rC[5+2*TT0I]); \
-  TYPE_MAC(rA[6],rB[2],rC[6+2*TT0I]); \
-  TYPE_MAC(rA[7],rB[2],rC[7+2*TT0I]); \
-  TYPE_MAC(rA[0],rB[3],rC[0+3*TT0I]); \
-  TYPE_MAC(rA[1],rB[3],rC[1+3*TT0I]); \
-  TYPE_MAC(rA[2],rB[3],rC[2+3*TT0I]); \
-  TYPE_MAC(rA[3],rB[3],rC[3+3*TT0I]); \
-  TYPE_MAC(rA[4],rB[3],rC[4+3*TT0I]); \
-  TYPE_MAC(rA[5],rB[3],rC[5+3*TT0I]); \
-  TYPE_MAC(rA[6],rB[3],rC[6+3*TT0I]); \
-  TYPE_MAC(rA[7],rB[3],rC[7+3*TT0I]); \
-  TYPE_MAC(rA[0],rB[4],rC[0+4*TT0I]); \
-  TYPE_MAC(rA[1],rB[4],rC[1+4*TT0I]); \
-  TYPE_MAC(rA[2],rB[4],rC[2+4*TT0I]); \
-  TYPE_MAC(rA[3],rB[4],rC[3+4*TT0I]); \
-  TYPE_MAC(rA[4],rB[4],rC[4+4*TT0I]); \
-  TYPE_MAC(rA[5],rB[4],rC[5+4*TT0I]); \
-  TYPE_MAC(rA[6],rB[4],rC[6+4*TT0I]); \
-  TYPE_MAC(rA[7],rB[4],rC[7+4*TT0I]); \
-  TYPE_MAC(rA[0],rB[5],rC[0+5*TT0I]); \
-  TYPE_MAC(rA[1],rB[5],rC[1+5*TT0I]); \
-  TYPE_MAC(rA[2],rB[5],rC[2+5*TT0I]); \
-  TYPE_MAC(rA[3],rB[5],rC[3+5*TT0I]); \
-  TYPE_MAC(rA[4],rB[5],rC[4+5*TT0I]); \
-  TYPE_MAC(rA[5],rB[5],rC[5+5*TT0I]); \
-  TYPE_MAC(rA[6],rB[5],rC[6+5*TT0I]); \
-  TYPE_MAC(rA[7],rB[5],rC[7+5*TT0I]); \
-  TYPE_MAC(rA[0],rB[6],rC[0+6*TT0I]); \
-  TYPE_MAC(rA[1],rB[6],rC[1+6*TT0I]); \
-  TYPE_MAC(rA[2],rB[6],rC[2+6*TT0I]); \
-  TYPE_MAC(rA[3],rB[6],rC[3+6*TT0I]); \
-  TYPE_MAC(rA[4],rB[6],rC[4+6*TT0I]); \
-  TYPE_MAC(rA[5],rB[6],rC[5+6*TT0I]); \
-  TYPE_MAC(rA[6],rB[6],rC[6+6*TT0I]); \
-  TYPE_MAC(rA[7],rB[6],rC[7+6*TT0I]); \
-  TYPE_MAC(rA[0],rB[7],rC[0+7*TT0I]); \
-  TYPE_MAC(rA[1],rB[7],rC[1+7*TT0I]); \
-  TYPE_MAC(rA[2],rB[7],rC[2+7*TT0I]); \
-  TYPE_MAC(rA[3],rB[7],rC[3+7*TT0I]); \
-  TYPE_MAC(rA[4],rB[7],rC[4+7*TT0I]); \
-  TYPE_MAC(rA[5],rB[7],rC[5+7*TT0I]); \
-  TYPE_MAC(rA[6],rB[7],rC[6+7*TT0I]); \
-  TYPE_MAC(rA[7],rB[7],rC[7+7*TT0I]); \
 
 /* hard-coded initial strides */
 #define strideD0I 1
